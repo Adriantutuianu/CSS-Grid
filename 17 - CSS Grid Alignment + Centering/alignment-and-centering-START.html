@@ -22,33 +22,39 @@
     </div>
 
     <style>
-      /*
-      justify-content:
-      align-content:
+        /*
+        justify-content:
+        align-content:
 
-      align-self:
-      justify-self:
+        align-self:
+        justify-self:
 
-      justify-* is row axis
-      align-* is column axis
-    */
+        justify-* is row axis
+        align-* is column axis
+      */
 
-      .container {
-        display: grid;
-        grid-gap: 20px;
-        height: 500px;
-        grid-template-columns: repeat(5, 100px);
-        border: 10px solid var(--yellow);
-        justify-items: stretch;
-        align-items: stretch;
-        /* place-items: center center; -Is the same with justify + align items  */
-        justify-content: space-between;
-        align-content: start;
-      }
+        .container {
+          display: grid;
+          grid-gap: 20px;
+          height: 500px;
+          grid-template-columns: repeat(5, 100px);
+          border: 10px solid var(--yellow);
+          justify-items: stretch;
+          align-items: stretch;
+          /* place-items: center center; -Is the same with justify + align items  */
+          justify-content: space-between;
+          align-content: start;
+        }
 
-      .itm {
-        background: white;
-      }
+        .itm {
+          background: white;
+
+          }
+
+          .itm5 {
+            justify-self: center;
+          }
+        }
     </style>
   </body>
 </html>
