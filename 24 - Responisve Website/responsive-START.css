@@ -61,3 +61,14 @@ img {
   font-size: 60px;
   font-weight: 300;
 }
+
+/* navigation  */
+
+.menu ul {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
