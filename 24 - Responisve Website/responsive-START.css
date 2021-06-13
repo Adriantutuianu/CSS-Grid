@@ -158,3 +158,20 @@ img {
 .gallery h2:after {
   background: linear-gradient(to right, var(--yellow), transparent);
 }
+/* When you make page smaller the prices are going under the photo  */
+@media (max-width: 700px) {
+  .top {
+    grid-template-areas:
+      "hero hero"
+      "cta1 cta2";
+  }
+}
+
+@media (max-width: 500px) {
+  .top {
+    grid-template-areas:
+      "hero"
+      "cta1"
+      "cta2";
+  }
+}
