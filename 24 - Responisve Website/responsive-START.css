@@ -183,6 +183,18 @@ img {
   transform: rotateX(0);
 }
 
+[aria-expanded="false"] .close {
+  display: none;
+}
+
+[aria-expanded="true"] .close {
+  display: inline-block;
+}
+
+[aria-expanded="true"] .open {
+  display: none;
+}
+
 /* When you make page smaller the prices are going under the photo  */
 @media (max-width: 700px) {
   .top {
