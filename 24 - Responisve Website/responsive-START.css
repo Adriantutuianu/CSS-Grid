@@ -67,7 +67,9 @@ img {
 .menu ul {
   display: grid;
   padding: 0;
-  margin: 0;
+  grid-gap: 10px;
+
+  margin: 20px 0;
   list-style: none;
 
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -82,4 +84,8 @@ img {
   color: var(--black);
   text-transform: uppercase;
   font-size: 20px;
+}
+
+[aria-controls="menu-list"] {
+  display: none;
 }
