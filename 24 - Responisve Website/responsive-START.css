@@ -163,6 +163,16 @@ img {
   .menu {
     order: -1;
   }
+  [aria-controls="menu-list"] {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+.menu ul {
+  max-height: 0;
+  transform: rotateX(90deg);
+  transition: all 0.5s;
 }
 
 /* When you make page smaller the prices are going under the photo  */
