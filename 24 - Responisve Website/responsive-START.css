@@ -158,6 +158,13 @@ img {
 .gallery h2:after {
   background: linear-gradient(to right, var(--yellow), transparent);
 }
+
+@media (max-width: 1000px) {
+  .menu {
+    order: -1;
+  }
+}
+
 /* When you make page smaller the prices are going under the photo  */
 @media (max-width: 700px) {
   .top {
