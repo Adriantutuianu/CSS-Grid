@@ -239,6 +239,23 @@
         text-align: center;
         margin: 0;
       }
+
+      .tip {
+        background: #fafafa;
+        padding: 10px;
+        grid-row: span 3;
+      }
+
+      .tip-left {
+        grid-column: 1 / span 1;
+        text-align: right;
+        border-right: 2px solid var(--yellow);
+      }
+
+      .tip-right {
+        grid-column: span 1 / -1;
+        border-left: 2px solid var(--yellow);
+      }
     </style>
   </body>
 </html>
