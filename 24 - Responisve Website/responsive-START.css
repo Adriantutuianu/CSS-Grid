@@ -12,10 +12,13 @@ img {
   max-width: 100%;
 }
 
+/* .wrapper */
+
 .wrapper {
   display: grid;
   grid-gap: 20px;
 }
+
 .top {
   display: grid;
   grid-gap: 20px;
@@ -33,7 +36,7 @@ img {
   padding: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: start;
   justify-content: center;
 }
 
@@ -53,6 +56,7 @@ img {
 .cta p {
   margin: 0;
 }
+
 .cta1 {
   grid-area: cta1;
 }
@@ -66,16 +70,13 @@ img {
   font-weight: 300;
 }
 
-/* navigation  */
+/* Navigation */
 
 .menu ul {
   display: grid;
-  padding: 0;
   grid-gap: 10px;
-
-  margin: 20px 0;
+  padding: 0;
   list-style: none;
-
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
@@ -94,30 +95,30 @@ img {
   display: none;
 }
 
-/* Features  */
+/* Features! */
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .feature {
   background: white;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
   text-align: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-.feature-icon {
+.feature .icon {
   font-size: 50px;
 }
 .feature p {
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* About Section  */
+/* About Section */
 
 .about {
   background: white;
@@ -125,14 +126,18 @@ img {
   display: grid;
   grid-template-columns: 400px 1fr;
   align-items: center;
-  margin: ;
 }
-/* Gallery  */
+
+/* Gallery! */
 
 .gallery {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img {
+  width: 100%;
 }
 
 .gallery h2 {
@@ -143,20 +148,20 @@ img {
   align-items: center;
 }
 
-.gallery img {
-  width: 100%;
-}
-
 .gallery h2:before,
 .gallery h2:after {
   display: block;
   content: "";
   height: 10px;
-  background: linear-gradient(to left, var(--yellow), transparent);
+  background: linear-gradient(
+    to var(--direction, left),
+    var(--yellow),
+    transparent
+  );
 }
 
 .gallery h2:after {
-  background: linear-gradient(to right, var(--yellow), transparent);
+  --direction: right;
 }
 
 @media (max-width: 1000px) {
@@ -168,42 +173,40 @@ img {
     display: block;
     margin-bottom: 10px;
   }
+
+  .menu ul {
+    max-height: 0;
+    overflow: hidden;
+    transform: rotateX(90deg);
+    transition: all 0.5s;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display: grid;
+    max-height: 500px;
+    transform: rotateX(0);
+  }
+
+  [aria-expanded="false"] .close {
+    display: none;
+  }
+
+  [aria-expanded="true"] .close {
+    display: inline-block;
+  }
+
+  [aria-expanded="true"] .open {
+    display: none;
+  }
 }
 
-.menu ul {
-  max-height: 0;
-  overflow: hidden;
-  transform: rotateX(90deg);
-  transition: all 0.5s;
-}
-
-[aria-expanded="true"] ~ ul {
-  display: grid;
-  max-height: 500px;
-  transform: rotateX(0);
-}
-
-[aria-expanded="false"] .close {
-  display: none;
-}
-
-[aria-expanded="true"] .close {
-  display: inline-block;
-}
-
-[aria-expanded="true"] .open {
-  display: none;
-}
-
-/* When you make page smaller the prices are going under the photo  */
 @media (max-width: 700px) {
   .top {
     grid-template-areas:
       "hero hero"
       "cta1 cta2";
   }
-
-  /* About  */
+  /* About */
   .about {
     grid-template-columns: 1fr;
   }
